@@ -6,12 +6,13 @@ app.use(express.json())
 const users = []
 
 app.post('/usuarios', (req, res) => {
-    console.log(req)
+
+    users.push(req.body)
     res.send('aqui deu cert')
 })
 
 app.get('/usuarios', (req, res) => {
-    res.send("ok, deu bom")
+    res.json(users)
 })
 
 app.listen(3000)
